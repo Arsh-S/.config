@@ -1,0 +1,23 @@
+return {
+  -- Load all plugin files
+  require("arsh.plugins.colorscheme"),
+  require("arsh.plugins.lsp"),
+  require("arsh.plugins.telescope"),
+  require("arsh.plugins.treesitter"),
+  require("arsh.plugins.cmp"),
+  require("arsh.plugins.nvim-tree"),
+  require("arsh.plugins.lualine"),
+  require("arsh.plugins.gitsigns"),
+  require("arsh.plugins.lazygit"),
+  require("arsh.plugins.comment"),
+  require("arsh.plugins.autoclose"),
+  require("arsh.plugins.tmux-navigator"),
+  require("arsh.plugins.formatting"),
+  require("arsh.plugins.linting"),
+  require("arsh.plugins.nvim-web-devicons"),
+  require("arsh.plugins.plenary"),
+  require("arsh.plugins.windows"),
+  require("arsh.plugins.treesitterplayground"),
+  require("arsh.plugins.surround"),
+  require("arsh.plugins.replacewithregister"),
+}

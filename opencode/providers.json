@@ -1,0 +1,9 @@
+{
+  "providers": {
+    "lm-studio": {
+      "baseUrl": "http://localhost:1234/v1",
+      "apiKey": "",
+      "models": ["qwen/qwen3-coder-30b"]
+    }
+  }
+}

@@ -1,0 +1,95 @@
+# macOS
+.DS_Store
+
+# Credentials and tokens (generic patterns)
+**/credentials*
+**/tokens*
+**/secrets
+**/*_credentials*
+**/*_tokens*
+*.db
+*.sqlite
+*.sqlite3
+
+# Google Cloud - contains auth tokens and credentials
+gcloud/
+
+# GitHub CLI - contains auth tokens
+gh/
+
+# Git credentials
+git/credentials
+git/config
+
+# GitHub Copilot - contains session data
+github-copilot/
+
+# Notification service endpoint
+notify-run
+
+# Epic Games launcher - may contain session data
+legendary/
+
+# Spotify customization - may contain auth
+spicetify/
+
+# Immich - likely contains API keys
+immich/
+
+# Raycast - contains access tokens
+raycast/
+
+# Generic sensitive patterns
+configstore/
+
+# Application-specific sensitive data
+*.pem
+*.key
+*.cert
+*.p12
+**/auth.json
+**/.credentials
+**/.tokens
+
+# Claude local settings (project-specific)
+**/.claude/
+
+# Node modules (standard practice)
+**/node_modules/
+
+# Lock files (regenerated)
+**/bun.lock
+**/package-lock.json
+
+# iTerm2 sockets and symlinks
+iterm2/
+
+# Logs (may contain sensitive info)
+**/logs/
+*.log
+
+# Mole (SSH tunnel tool - may have connection info)
+mole/
+
+# Temporary files
+**/tmp/
+*.tmp
+*.temp
+
+# qBittorrent (contains personal download paths)
+qBittorrent/
+
+# HKModInstaller (contains personal paths and large cache files)
+HKModInstaller/
+
+# Autodesk (empty but unnecessary)
+Autodesk/
+
+# htop (user-specific settings)
+htop/
+
+# mpv (user-specific settings)
+mpv/
+
+# uv (install receipt - not useful)
+uv/

@@ -1,0 +1,28 @@
+{
+    "profiles": [
+        {
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 50489,
+                        "vendor_id": 1133
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "pointing_button": "button5" },
+                            "to": [{ "pointing_button": "button5" }]
+                        },
+                        {
+                            "from": { "pointing_button": "button4" },
+                            "to": [{ "pointing_button": "button4" }]
+                        }
+                    ]
+                }
+            ],
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}
