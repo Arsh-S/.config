@@ -22,7 +22,7 @@ return {
 			enable = false,
 			additional_vim_regex_highlighting = false,
 		},
-		indent = { enable = true },
+		indent = { enable = false },
 
 		-- Enable TS playground to inspect highlight groups
 		playground = {

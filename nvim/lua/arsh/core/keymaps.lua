@@ -25,6 +25,14 @@ keymap("n", "<leader>fc", "<cmd>Telescope grep_string<CR>", opts)
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
 
+-- Bufferline
+keymap("n", "]b", "<cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right", noremap = true, silent = true })
+keymap("n", "[b", "<cmd>BufferLineMovePrev<CR>", { desc = "Move buffer left", noremap = true, silent = true })
+keymap("n", "<leader>bp", "<cmd>BufferLinePick<CR>", { desc = "Pick buffer", noremap = true, silent = true })
+keymap("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Close current buffer", noremap = true, silent = true })
+keymap("n", "<leader>[", "<cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer", noremap = true, silent = true })
+keymap("n", "<leader>]", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer", noremap = true, silent = true })
+
 -- LSP
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 keymap("n", "gf", "<cmd>Lspsaga finder<CR>", opts)

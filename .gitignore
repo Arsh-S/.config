@@ -11,6 +11,9 @@
 *.sqlite
 *.sqlite3
 
+# Opencode
+opencode/
+
 # Google Cloud - contains auth tokens and credentials
 gcloud/
 

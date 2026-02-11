@@ -20,4 +20,5 @@ return {
   require("arsh.plugins.treesitterplayground"),
   require("arsh.plugins.surround"),
   require("arsh.plugins.replacewithregister"),
+  require("arsh.plugins.bufferline"),
 }
