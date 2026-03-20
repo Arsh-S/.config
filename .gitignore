@@ -57,6 +57,9 @@ configstore/
 # Claude local settings (project-specific)
 **/.claude/
 
+# Tmux plugins (managed by tpm)
+tmux/plugins/
+
 # Node modules (standard practice)
 **/node_modules/
 

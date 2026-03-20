@@ -272,3 +272,6 @@ copy-on-select = false
 click-repeat-interval = 500
 macos-icon = retro
 auto-update-channel = stable
+
+# Fix tmux attach issues
+shell-integration = none

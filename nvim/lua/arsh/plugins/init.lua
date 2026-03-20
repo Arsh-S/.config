@@ -21,4 +21,30 @@ return {
   require("arsh.plugins.surround"),
   require("arsh.plugins.replacewithregister"),
   require("arsh.plugins.bufferline"),
+  require("arsh.plugins.smear-cursor"),
+
+  -- Movement & Editing
+  require("arsh.plugins.flash"),
+  require("arsh.plugins.mini-ai"),
+  require("arsh.plugins.undotree"),
+
+  -- Visual & UI
+  require("arsh.plugins.noice"),
+  require("arsh.plugins.indent-blankline"),
+  require("arsh.plugins.dressing"),
+  require("arsh.plugins.todo-comments"),
+  require("arsh.plugins.which-key"),
+
+  -- Productivity
+  require("arsh.plugins.harpoon"),
+  require("arsh.plugins.trouble"),
+  require("arsh.plugins.oil"),
+  require("arsh.plugins.toggleterm"),
+
+  -- Git
+  require("arsh.plugins.diffview"),
+
+  -- Coding
+  require("arsh.plugins.copilot"),
+  require("arsh.plugins.dap"),
 }

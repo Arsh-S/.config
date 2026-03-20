@@ -6,20 +6,25 @@ return {
 	event = { "BufReadPost", "BufNewFile" },
 	opts = {
 		ensure_installed = {
-			"lua",
-			"vim",
-			"javascript",
-			"typescript",
-			"tsx",
-			"html",
-			"css",
-			"json",
-			"python",
-			"markdown",
-			"markdown_inline",
+			"lua", "vim", "vimdoc", "query",
+			"javascript", "typescript", "tsx", "jsdoc",
+			"html", "css", "scss",
+			"json", "jsonc", "yaml", "toml",
+			"python", "rust", "go", "gomod", "gosum",
+			"c", "cpp", "java", "c_sharp",
+			"ruby", "php", "zig",
+			"bash", "fish",
+			"sql",
+			"markdown", "markdown_inline",
+			"regex", "diff", "gitcommit", "git_rebase",
+			"dockerfile", "terraform",
+			"svelte", "vue",
+			"graphql", "proto",
+			"make", "cmake",
+			"xml",
 		},
 		highlight = {
-			enable = false,
+			enable = true,
 			additional_vim_regex_highlighting = false,
 		},
 		indent = { enable = false },
@@ -32,6 +37,6 @@ return {
 		},
 	},
 	config = function(_, opts)
-		require("nvim-treesitter.config").setup(opts)
+		require("nvim-treesitter.configs").setup(opts)
 	end,
 }

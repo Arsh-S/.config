@@ -3,12 +3,12 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     require("lualine").setup({
-
       sections = {
-        lualine_x = { "encoding", { "fileformat", symbols = { unix = "" } }, "filetype" },
+        lualine_c = { { "filename", path = 2 } },
+        lualine_x = { "encoding", { "fileformat", symbols = { unix = "" } }, "filetype" },
       },
       options = {
-        theme = "gruvbox", -- ← apply gruvbox theme
+        theme = "gruvbox",
       },
     })
   end,
