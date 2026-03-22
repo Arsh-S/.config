@@ -39,7 +39,7 @@ opt.iskeyword:append("-")
 
 -- Key repeat settings for motion keys
 opt.timeout = true
-opt.timeoutlen = 500
+opt.timeoutlen = 200
 opt.ttimeoutlen = 0
 
 -- Allow key repeat (important for motion keys like hjkl)
@@ -58,6 +58,9 @@ opt.incsearch = true
 -- Scroll settings
 opt.scrolloff = 8
 opt.sidescrolloff = 8
+
+-- Session persistence
+opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- Better experience
 opt.updatetime = 50

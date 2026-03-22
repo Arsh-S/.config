@@ -29,7 +29,16 @@ keymap("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
 keymap("n", "]b", "<cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right", noremap = true, silent = true })
 keymap("n", "[b", "<cmd>BufferLineMovePrev<CR>", { desc = "Move buffer left", noremap = true, silent = true })
 keymap("n", "<leader>bp", "<cmd>BufferLinePick<CR>", { desc = "Pick buffer", noremap = true, silent = true })
-keymap("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Close current buffer", noremap = true, silent = true })
+keymap("n", "<leader>bd", function()
+  local bufs = vim.tbl_filter(function(b)
+    return vim.bo[b].buflisted
+  end, vim.api.nvim_list_bufs())
+  if #bufs <= 1 then
+    vim.cmd("enew | bdelete #")
+  else
+    vim.cmd("bprevious | bdelete #")
+  end
+end, { desc = "Close current buffer", noremap = true, silent = true })
 keymap("n", "<leader>[", "<cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer", noremap = true, silent = true })
 keymap("n", "<leader>]", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer", noremap = true, silent = true })
 
