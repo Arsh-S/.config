@@ -82,7 +82,7 @@ return {
 			},
 			actions = {
 				open_file = {
-					resize_window = false,
+					resize_window = true,
 					quit_on_open = false,
 				},
 			},
@@ -120,5 +120,13 @@ return {
 		keymap.set("n", "<BS>", function()
 			api.node.navigate.parent()
 		end)
+
+		-- Auto-open tree when nvim is launched with a directory
+		local arg = vim.fn.argv(0)
+		if arg == "" or vim.fn.isdirectory(arg) == 1 then
+			vim.schedule(function()
+				api.tree.open()
+			end)
+		end
 	end,
 }

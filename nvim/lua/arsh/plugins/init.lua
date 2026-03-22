@@ -16,7 +16,6 @@ return {
   require("arsh.plugins.linting"),
   require("arsh.plugins.nvim-web-devicons"),
   require("arsh.plugins.plenary"),
-  require("arsh.plugins.windows"),
   require("arsh.plugins.treesitterplayground"),
   require("arsh.plugins.surround"),
   require("arsh.plugins.replacewithregister"),
