@@ -14,7 +14,7 @@ return {
       animation = {
         enable = true,
         duration = 150, -- milliseconds
-        fps = 60,
+        fps = 120,
         easing = "in_out_sine", -- options: linear, in_sine, out_sine, in_out_sine
       },
     })
