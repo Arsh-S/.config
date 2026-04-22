@@ -269,6 +269,7 @@ cursor-text = #1f1f28
 command = /bin/zsh
 clipboard-read = allow
 copy-on-select = false
+mouse-shift-capture = false
 click-repeat-interval = 500
 macos-icon = retro
 auto-update-channel = stable

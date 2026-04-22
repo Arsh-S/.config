@@ -93,11 +93,8 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -151,12 +148,36 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/lib/ruby/gems/4.0.0/bin:$PATH"
 alias clauded="claude --dangerously-skip-permissions"
 alias lg="lazygit"
+alias speedflip='/Library/Frameworks/Python.framework/Versions/3.10/bin/python3 ~/Documents/speedflip.py'
+
+# Use trash (moves to macOS Trash) instead of permanent rm
+export PATH="/opt/homebrew/opt/trash/bin:$PATH"
+alias rm='trash'
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/arsh/.lmstudio/bin"
 # End of LM Studio CLI section
 
+alias curaise="cd /Users/arsh/Documents/DTI/curaise"
+alias sp26="cd /Users/arsh/Documents/Classes/SP26/"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Cloudflare API token — loaded from macOS Keychain so Claude Code sessions can deploy to Cloudflare (Pages, DNS).
+# Token stored via: security add-generic-password -s cloudflare-api-token -a "$USER" -w <token>
+# Scope: Account.Cloudflare Pages: Edit + Zone.DNS: Edit (arshsingh.net)
+if command -v security >/dev/null 2>&1; then
+  export CLOUDFLARE_API_TOKEN="$(security find-generic-password -s 'cloudflare-api-token' -w 2>/dev/null)"
+  export CLOUDFLARE_ACCOUNT_ID="$(security find-generic-password -s 'cloudflare-account-id' -w 2>/dev/null)"
+fi
+
+# bun completions
+[ -s "/Users/arsh/.bun/_bun" ] && source "/Users/arsh/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias claude-mem='/Users/arsh/.bun/bin/bun "/Users/arsh/.claude/plugins/cache/thedotmack/claude-mem/12.1.5/scripts/worker-service.cjs"'

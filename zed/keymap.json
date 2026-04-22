@@ -1,0 +1,126 @@
+// Zed keymap — synced with Neovim keymaps + Cursor keybindings
+[
+  // === Vim Normal Mode (from nvim keymaps.lua + editor.lua + git.lua) ===
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // Add line above/below without entering insert (nvim: <leader>j / <leader>k)
+      "space j": ["workspace::SendKeystrokes", "o escape"],
+      "space k": ["workspace::SendKeystrokes", "O escape"],
+
+      // Format buffer (nvim: <leader>fm and LazyVim default <leader>cf)
+      "space f m": "editor::Format",
+      "space c f": "editor::Format",
+
+      // File operations
+      "space w": "workspace::Save",
+      "space q": "pane::CloseActiveItem",
+      "space b d": "pane::CloseActiveItem",
+
+      // Search / find (nvim: telescope / snacks picker equivalents)
+      "space space": "file_finder::Toggle",
+      "space f f": "file_finder::Toggle",
+      "space f g": "workspace::NewSearch",
+      "space s g": "workspace::NewSearch",
+      "space f b": "tab_switcher::Toggle",
+
+      // Explorer / file tree (nvim: oil `-` key, snacks explorer)
+      "space e": "workspace::ToggleLeftDock",
+
+      // Git (nvim: <leader>gd, <leader>gh, <leader>gg)
+      "space g d": "editor::ToggleHunkDiff",
+      "space g h": "editor::ToggleGitBlame",
+      "space g g": ["task::Spawn", {"task_name": "lazygit"}],
+
+      // Diagnostics (nvim: LazyVim defaults)
+      "space x x": "diagnostics::Deploy",
+      "space c a": "editor::ToggleCodeActions",
+      "space c r": "editor::Rename",
+
+      // Harpoon-style tab switching (nvim: <leader>1-4)
+      "space 1": ["pane::ActivateItem", 0],
+      "space 2": ["pane::ActivateItem", 1],
+      "space 3": ["pane::ActivateItem", 2],
+      "space 4": ["pane::ActivateItem", 3],
+
+      // Buffer navigation
+      "space b n": "pane::ActivateNextItem",
+      "space b p": "pane::ActivatePrevItem",
+
+      // Go to definition / references (nvim: LSP defaults)
+      "g d": "editor::GoToDefinition",
+      "g r": "editor::FindAllReferences",
+      "g i": "editor::GoToImplementation",
+      "g t": "editor::GoToTypeDefinition",
+      "K": "editor::Hover",
+
+      // Delete line (Cursor: shift+backspace)
+      "shift-backspace": "editor::DeleteLine",
+
+      // Split panes (nvim: splits)
+      "space v": "pane::SplitRight",
+      "space s": "pane::SplitDown",
+
+      // Pane navigation (nvim: vim-tmux-navigator)
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+
+      // ctrl-j down to terminal, ctrl-k up from terminal
+      "ctrl-j": "terminal_panel::ToggleFocus",
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+
+      // Command palette (like nvim : commands)
+      "space p": "command_palette::Toggle"
+    }
+  },
+
+  // === Vim Visual Mode ===
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      // Move selected lines (common vim visual mappings)
+      "J": "editor::MoveLineDown",
+      "K": "editor::MoveLineUp"
+    }
+  },
+
+  // === Vim Insert Mode ===
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-j": "terminal_panel::ToggleFocus",
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"]
+    }
+  },
+
+  // === Project panel: ctrl-l to jump back to editor ===
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-j": "terminal_panel::ToggleFocus"
+    }
+  },
+
+  // === Workspace-level bindings (work from anywhere) ===
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-\\": "terminal_panel::ToggleFocus",
+      "ctrl-j": "terminal_panel::ToggleFocus"
+    }
+  },
+
+  // === Terminal: ctrl-k up to editor, ctrl-\ also works ===
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-\\": "terminal_panel::ToggleFocus",
+      "ctrl-k": "terminal_panel::ToggleFocus",
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"]
+    }
+  }
+]

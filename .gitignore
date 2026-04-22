@@ -1,6 +1,15 @@
 # macOS
 .DS_Store
 
+# Local backups
+nvim.bak/
+
+# Zed personal prompt database
+zed/prompts/
+
+# Vercel CLI telemetry marker
+vercel-plugin/
+
 # Credentials and tokens (generic patterns)
 **/credentials*
 **/tokens*
